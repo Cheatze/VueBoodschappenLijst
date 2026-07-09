@@ -1,5 +1,5 @@
 <script setup>
-//import HelloWorld from './components/HelloWorld.vue'
+import GroceriesTable from './components/GroceriesTable.vue';
 import {ref, reactive} from 'vue';
 
 const products = reactive([
@@ -18,33 +18,8 @@ function updateQuantity(productId, newQuantity) {
 </script>
 
 <template>
-    <table>
-        <tr>
-            <th>Product</th>
-            <th>Prijs</th>
-            <th>Hoeveelheid</th>
-            <th>Subtotaal</th>
-        </tr>
-        <tr v-for="product in products" :key="product.id">
-            <td>{{ product.name }}</td>
-            <td>€{{ product.price.toFixed(2) }}</td>
-            <td>
-                <input
-                    type="number"
-                    v-model.number="product.quantity"
-                    @input="updateQuantity(product.id, product.quantity)"
-                    min="0"
-                />
-            </td>
-            <td>€{{ (product.price * product.quantity).toFixed(2) }}</td>
-        </tr>
-        <tr>
-            <td colspan="3"><strong>Totaal</strong></td>
-            <td>
-                <strong>
-                    €{{ products.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2) }}
-                </strong>
-            </td>
-        </tr>
-    </table>
+    <div>
+        <h1>Boodschappenlijst</h1>
+        <GroceriesTable :products="products" @updateQuantity="updateQuantity" />
+    </div>
 </template>
