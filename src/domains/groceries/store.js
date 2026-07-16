@@ -20,10 +20,19 @@ export const addProduct = product => {
     state.products.push(newProduct);
 };
 
-//Do I really need this here?
 export const updateProductQuantity = (productId, newQuantity) => {
     const product = state.products.find(p => p.id === productId);
     if (product) {
         product.quantity = newQuantity;
     }
 };
+
+export const getProductById = function (productId) {
+    console.log('getProductById called with productId: ' + productId);
+    // return state.products.find(p => p.id === productId);
+};
+
+// export const getProductById = productId => {
+//     alert('getProductById called with productId: ' + productId);
+//     return state.products.find(p => p.id === productId);
+// };

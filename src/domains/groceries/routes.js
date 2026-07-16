@@ -7,7 +7,7 @@ import overview from './pages/Overview.vue';
 const routes = [
     {path: '/overview', component: overview},
     {path: '/create', component: create},
-    {path: '/edit', component: edit},
+    {path: '/edit/:id', component: edit},
 ];
 
 export {routes};
