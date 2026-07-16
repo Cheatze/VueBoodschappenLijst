@@ -20,12 +20,13 @@ import router from './router/index.js';
 
 <template>
     <div>
-        <h1></h1>
+        <h1>Boodschappen</h1>
         <!-- <h1>Boodschappenlijst</h1>
         <GroceriesTable :products="products" @updateQuantity="updateQuantity" /> -->
         <RouterLink to="/overview">Overview</RouterLink>
         <br />
         <RouterLink to="/create">Create</RouterLink>
+        <br />
         <RouterView />
     </div>
 </template>
