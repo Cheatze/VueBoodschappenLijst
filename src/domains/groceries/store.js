@@ -13,11 +13,19 @@ const state = reactive({
 export const getAllProducts = computed(() => state.products);
 
 //actions
-export const addProduct = product => {
+export const addProduct = (name, amount, price) => {
     const newId = state.products.length + 1;
-    const newProduct = {id: newId, ...product};
+    const newProduct = {id: newId, name, amount, price};
+    console.log(newProduct);
     state.products.push(newProduct);
 };
+
+// export const addProduct = product => {
+//     const newId = state.products.length + 1;
+//     const newProduct = {id: newId, ...product};
+//     console.log(newProduct);
+//     state.products.push(newProduct);
+// };
 
 //Do I really need this here?
 export const updateProductQuantity = (productId, newQuantity) => {
