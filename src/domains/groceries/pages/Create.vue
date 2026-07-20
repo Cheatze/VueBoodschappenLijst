@@ -13,7 +13,7 @@ const product = reactive({
 
 function addAProduct(productName, productAmount, productPrice) {
     addProduct({name: productName, price: productPrice, quantity: productAmount});
-    console.log(`Product added: ${productName}, Amount: ${productAmount}, Price: ${productPrice}`);
+    console.log(`Product added: ${productName}, quantity: ${productAmount}, Price: ${productPrice}`);
 }
 </script>
 

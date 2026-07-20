@@ -27,12 +27,19 @@ export const updateProductQuantity = (productId, newQuantity) => {
     }
 };
 
-export const getProductById = function (productId) {
-    console.log('getProductById called with productId: ' + productId);
-    // return state.products.find(p => p.id === productId);
-};
-
-// export const getProductById = productId => {
-//     alert('getProductById called with productId: ' + productId);
+// export const getProductById = function (productId) {
+//     console.log('getProductById called with productId: ' + productId);
 //     return state.products.find(p => p.id === productId);
 // };
+
+export const getProductById = productId => {
+    //alert('getProductById called with productId: ' + productId);
+    return state.products.find(p => p.id === productId);
+};
+
+export const editProduct = (productId, updatedProduct) => {
+    const productIndex = state.products.findIndex(p => p.id === productId);
+    if (productIndex !== -1) {
+        state.products[productIndex] = {...state.products[productIndex], ...updatedProduct};
+    }
+};
