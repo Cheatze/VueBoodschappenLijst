@@ -12,6 +12,7 @@ const routes = [
 
 export {routes};
 
+//This is somwhere else
 // const router = createRouter({
 //     history: createWebHistory(),
 //     routes,

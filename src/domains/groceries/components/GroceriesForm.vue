@@ -12,21 +12,21 @@ const props = defineProps({
 const emit = defineEmits(['addAProduct', 'updateAProduct']);
 
 const productName = ref(props.product.name);
-const productAmount = ref(props.product.amount);
+const productAmount = ref(props.product.quantity);
 const productPrice = ref(props.product.price);
 
 function handleSubmit() {
     if (props.product.id) {
         emit('updateAProduct', props.product.id, {
             name: productName.value,
-            amount: productAmount.value,
+            quantity: productAmount.value,
             price: productPrice.value,
         });
     } else {
         emit('addAProduct', productName.value, productAmount.value, productPrice.value);
     }
     alert(
-        `Product ${props.product.id ? 'updated' : 'added'}: ${productName.value}, Amount: ${productAmount.value}, Price: ${productPrice.value}`,
+        `Product ${props.product.id ? 'updated' : 'added'}: ${productName.value}, Quantity: ${productAmount.value}, Price: ${productPrice.value}`,
     );
 }
 </script>

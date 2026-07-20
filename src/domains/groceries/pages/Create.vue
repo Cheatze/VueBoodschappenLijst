@@ -3,8 +3,6 @@ import {ref, reactive} from 'vue';
 import {getAllProducts, updateProductQuantity, addProduct} from '../store.js';
 import GroceriesForm from './../components/GroceriesForm.vue';
 
-/*const products = reactive(getAllProducts());*/
-
 const product = reactive({
     name: '',
     amount: 0,

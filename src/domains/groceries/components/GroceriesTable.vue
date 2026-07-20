@@ -8,7 +8,7 @@ const props = defineProps({
     },
 });
 
-const emit = defineEmits(['updateQuantity']);
+const emit = defineEmits(['updateQuantity', 'deleteAProduct']);
 </script>
 
 <template>
@@ -32,6 +32,7 @@ const emit = defineEmits(['updateQuantity']);
             </td>
             <td>€{{ product.price * product.quantity }}</td>
             <td><RouterLink :to="`/edit/${product.id}`">Edit</RouterLink></td>
+            <td><button @click="emit('deleteAProduct', product.id)">Delete</button></td>
         </tr>
         <tr>
             <td colspan="3"><strong>Totaal</strong></td>

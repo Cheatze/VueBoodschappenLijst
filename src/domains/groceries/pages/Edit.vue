@@ -8,8 +8,7 @@ const $route = useRoute();
 const productId = parseInt($route.params.id);
 const product = reactive(getProductById(productId));
 console.log(`Editing product with ID:` + $route.params.id);
-//console.log(`Editing product with ID: ${$route.params.id}`);
-//const product = getProductById(parseInt($route.params.id));
+
 function updateAProduct(productId, product) {
     editProduct(productId, {name: product.name, quantity: product.amount, price: product.price});
 }
